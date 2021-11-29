@@ -1,23 +1,26 @@
-import {
-  Navbar,
-  NavDropdown,
-  Nav,
-  Container,
-  Button,
-  FormControl,
-  InputGroup,
-} from "react-bootstrap";
-// import "bootstrap/dist/css/bootstrap.min.css";
+import Navbar from "react-bootstrap/Navbar";
+import NavDropdown from "react-bootstrap/NavDropdown";
+import Nav from "react-bootstrap/Nav";
+import Container from "react-bootstrap/Container";
+import Button from "react-bootstrap/Button";
+import FormControl from "react-bootstrap/FormControl";
+import InputGroup from "react-bootstrap/InputGroup";
+import CartWidget from "./CartWidget";
 
 function NavBar() {
   return (
-    <div>
+    <>
       <Navbar bg="light" expand="lg">
         <Container>
-          <Navbar.Brand href="#home">SECOND HAND BRAND</Navbar.Brand>
+          <div className="bg bg-primary mx-5 px-3">
+            <Navbar.Brand href="#home">SECOND HAND BRAND</Navbar.Brand>
+          </div>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="mx-5 container-fluid">
+          <Navbar.Collapse
+            className="container-fluid d-flex justify-content-center"
+            id="basic-navbar-nav"
+          >
+            <Nav>
               <Nav.Link href="#home">Inicio</Nav.Link>
               <NavDropdown title="Categorias" id="basic-nav-dropdown">
                 <NavDropdown.Item href="#action/3.1">
@@ -35,28 +38,30 @@ function NavBar() {
               </NavDropdown>
               <Nav.Link href="#link">Compras</Nav.Link>
               <Nav.Link href="#link">Ventas</Nav.Link>
-              <InputGroup className="mb-3  container-fluid">
-                <FormControl
-                  placeholder="Buscar..."
-                  aria-label="Recipient's username"
-                  aria-describedby="basic-addon2"
-                />
-                <Button variant="outline-secondary" id="button-search">
-                  Buscar
-                </Button>
-              </InputGroup>
-              <Button
-                variant="outline-secondary"
-                id="button-login"
-                className="mb-3 mx-3"
-              >
-                Login
-              </Button>
             </Nav>
           </Navbar.Collapse>
+          <div className=" container-fluid">
+            <InputGroup>
+              <FormControl
+                placeholder="Buscar..."
+                aria-label="Recipient's username"
+                aria-describedby="basic-addon2"
+              />
+
+              <Button variant="outline-secondary" id="button-search">
+                Buscar
+              </Button>
+            </InputGroup>
+          </div>
+          <CartWidget />
+          <div className="ms-4">
+            <Button variant="outline-secondary" id="button-login">
+              Login
+            </Button>
+          </div>
         </Container>
       </Navbar>
-    </div>
+    </>
   );
 }
 
