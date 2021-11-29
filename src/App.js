@@ -1,11 +1,14 @@
-import NavBar from "./components/NavBar";
 import "./styles.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import NavBar from "./components/NavBar/NavBar";
+import ItemListContainer from "./components/ItemListContainer";
 
 function App() {
   return (
-    <div>
+    <center>
       <NavBar />
-    </div>
+      <ItemListContainer greeting="ESTO ES EL ITEMLISTCONTAINER" />
+    </center>
   );
 }
 
