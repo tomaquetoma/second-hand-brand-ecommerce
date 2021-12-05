@@ -16,6 +16,7 @@ function NavBar() {
             <Navbar.Brand href="#home">SECOND HAND BRAND</Navbar.Brand>
           </div>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
+
           <Navbar.Collapse
             className="container-fluid d-flex justify-content-center"
             id="basic-navbar-nav"
@@ -40,6 +41,7 @@ function NavBar() {
               <Nav.Link href="#link">Ventas</Nav.Link>
             </Nav>
           </Navbar.Collapse>
+
           <div className=" container-fluid">
             <InputGroup>
               <FormControl
