@@ -1,21 +1,28 @@
-import Card from "react-bootstrap/Card";
-import ItemCount from "../ItemCount/ItemCount";
+import { useState, useEffect } from "react";
+import { getFetch } from "../../helpers/getFetch";
+import ItemList from "../ItemList/ItemList";
 
 const ItemListContainer = ({ greeting }) => {
-  const initial = 1;
-  const stock = 15;
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    getFetch
+      .then((result) => {
+        setProducts(result);
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  }, []);
 
   return (
     <div className="my-2">
       <h3>{greeting}</h3>
-      <Card style={{ width: "18rem" }}>
-        <h3> FALTA IMAGEN, mirar Card.Img comentado </h3>
-        {/* <Card.Img variant="top" src="#" /> */}
-        <Card.Body>
-          <Card.Title>Nombre Item</Card.Title>
-          <ItemCount initial={initial} stock={stock} />
-        </Card.Body>
-      </Card>
+      {loading ? <h1>Cargando...</h1> : <ItemList products={products} />}
     </div>
   );
 };

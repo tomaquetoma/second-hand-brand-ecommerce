@@ -25,6 +25,20 @@ const ItemCount = ({ initial, stock }) => {
     return setCantidadSeleccionada(contador);
   };
 
+  const onReset = () => {
+    return setCantidadSeleccionada(0);
+  };
+
+  // useEffect(() => {
+  //   // alert("Probando el useEffect");
+  //   console.log("esto se deberia de haber ejecutado primero");
+  // }, []);
+
+  // useEffect(() => {
+  //   // alert("Probando el useEffect");
+  //   alert("esto se deberia de haber ejecutado segundo");
+  // }, []);
+
   return (
     <div>
       <ButtonGroup
@@ -46,16 +60,14 @@ const ItemCount = ({ initial, stock }) => {
       >
         Añadir al Carrito
       </Button>
-
       <Button
         variant="outline-secondary"
         className="container-fluid my-2"
-        onClick={() => setCantidadSeleccionada(0)}
+        onClick={() => onReset()}
       >
         Quitar del carrito
       </Button>
       <p>Añadiste {cantidadSeleccionada} items al carrito</p>
-
       {/* <p>{contadorDate}</p> */}
     </div>
   );

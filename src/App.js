@@ -7,7 +7,8 @@ function App() {
   return (
     <center>
       <NavBar />
-      <ItemListContainer greeting="ITEMLISTCONTAINER" />
+
+      <ItemListContainer greeting="ITEMLISTCONTAINER desde APP" />
     </center>
   );
 }
