@@ -5,7 +5,6 @@ import { useState } from "react";
 const ItemCount = ({ initial, stock }) => {
   const [contador, setContador] = useState(initial);
   // // const [contadorDate, setContadorDate] = useState(Date());
-  const [cantidadSeleccionada, setCantidadSeleccionada] = useState();
 
   const handlerSuma = (valor) => {
     stock > contador
@@ -22,22 +21,9 @@ const ItemCount = ({ initial, stock }) => {
   };
 
   const onAdd = () => {
-    return setCantidadSeleccionada(contador);
+    const message = `Agregaste ${contador} producto`;
+    contador === 1 ? alert(message) : alert(`${message}s`);
   };
-
-  const onReset = () => {
-    return setCantidadSeleccionada(0);
-  };
-
-  // useEffect(() => {
-  //   // alert("Probando el useEffect");
-  //   console.log("esto se deberia de haber ejecutado primero");
-  // }, []);
-
-  // useEffect(() => {
-  //   // alert("Probando el useEffect");
-  //   alert("esto se deberia de haber ejecutado segundo");
-  // }, []);
 
   return (
     <div>
@@ -56,18 +42,11 @@ const ItemCount = ({ initial, stock }) => {
       <Button
         variant="outline-secondary"
         className="container-fluid"
-        onClick={() => onAdd()}
+        onClick={onAdd}
       >
         Añadir al Carrito
       </Button>
-      <Button
-        variant="outline-secondary"
-        className="container-fluid my-2"
-        onClick={() => onReset()}
-      >
-        Quitar del carrito
-      </Button>
-      <p>Añadiste {cantidadSeleccionada} items al carrito</p>
+
       {/* <p>{contadorDate}</p> */}
     </div>
   );

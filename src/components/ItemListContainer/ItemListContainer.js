@@ -12,7 +12,7 @@ const ItemListContainer = ({ greeting }) => {
         setProducts(result);
       })
       .catch((error) => {
-        console.log(error);
+        alert("Se ha producido un error", error);
       })
       .finally(() => {
         setLoading(false);

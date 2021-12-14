@@ -5,7 +5,6 @@ import Button from "react-bootstrap/Button";
 
 const Item = ({ product }) => {
   const initial = 1;
-  const stock = 15;
 
   return (
     <div key={product.id} className="my-2">
@@ -15,11 +14,12 @@ const Item = ({ product }) => {
           <Card.Title>
             {product.id} - {product.name}
           </Card.Title>
+          <p>Precio: USD {product.price}</p>
           <p> Stock disponible: {product.stock} </p>
           <Button variant="secondary" className="container-fluid my-2">
             Descripción
           </Button>
-          <ItemCount initial={initial} stock={stock} />
+          <ItemCount initial={initial} stock={product.stock} />
         </Card.Body>
       </Card>
     </div>
