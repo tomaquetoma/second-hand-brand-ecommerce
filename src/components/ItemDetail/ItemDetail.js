@@ -1,15 +1,39 @@
 import React from "react";
 
-const ItemDetail = ({ item }) => {
-  console.log(item[0]);
+const ItemDetail = ({ it }) => {
+  const { id, image, name, price, description, stock } = it;
+
   return (
-    <div key={item[0].id} className="flex bg-warning">
-      <h3>ItemDetail</h3>
-      <img src={item[0].image} alt={item[0].image} />
-      <strong>
-        <p>USD {item[0].price} </p>
-      </strong>
-      <p> {item[0].description} </p>
+    <div
+      key={id}
+      className="bg-warning border border-dark border-4 rounded container-sm"
+    >
+      <h4>
+        {id} - {name}
+      </h4>
+      <div className="container p-3">
+        <div className="row">
+          <div className="col">
+            <img
+              src={image}
+              alt="imagen"
+              className="border border-dark border-2 rounded"
+            />
+          </div>
+          <div className="col ">
+            <div className="border border-dark border-2 rounded p-1 bg bg-light my-3">
+              <h4>{name}</h4>
+              <p>
+                Precio: USD {price} - Stock: {stock}
+              </p>
+            </div>
+
+            <p className="border border-dark border-2 rounded p-2 bg bg-light">
+              {description}
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

@@ -1,30 +1,30 @@
-import React from "react";
-import ItemDetail from "../ItemDetail/ItemDetail";
 import { useState, useEffect } from "react";
-import { getOneProduct } from "../../helpers/getOneProduct";
+import ItemDetail from "../ItemDetail/ItemDetail";
+import { getFetch } from "../../helpers/getFetch";
+import { useParams } from "react-router-dom";
 
 const ItemDetailContainer = ({ propiedad }) => {
   const [item, setItem] = useState([]);
-  const [loading, setLoading] = useState(true);
+
+  const { idDetail } = useParams();
 
   useEffect(() => {
-    getOneProduct
+    getFetch
       .then((result) => {
-        setItem(result);
+        setItem(result.filter((prod) => prod.id === parseInt(idDetail)));
       })
       .catch((error) => {
         alert("Se ha producido un error", error);
-      })
-      .finally(() => {
-        setLoading(false);
       });
-  }, []);
+  }, [idDetail]);
 
   return (
-    <div>
-      <h3>Hola {propiedad}</h3>
-      {loading ? <h1>Cargando...</h1> : <ItemDetail item={item} />}
-    </div>
+    <>
+      <h3>Hola, soy {propiedad}</h3>
+      {item.map((it) => (
+        <ItemDetail it={it} />
+      ))}
+    </>
   );
 };
 
