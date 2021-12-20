@@ -7,7 +7,7 @@ const ItemListContainer = ({ greeting }) => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const { idCategory } = useParams();
+  const { idCategory } = useParams(); 
 
   useEffect(() => {
     if (idCategory) {

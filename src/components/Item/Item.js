@@ -1,25 +1,24 @@
 import React from "react";
-import ItemCount from "../ItemCount/ItemCount";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
-// import Col from "react-bootstrap/esm/Col";
-// import Row from "react-bootstrap/esm/Row";
-// import Container from "react-bootstrap/esm/Container";
 
 const Item = ({ product }) => {
-  const initial = 1;
-
   const { id, image, name, category, price, stock } = product;
 
   return (
-    <div key={id} className="col my-2">
-      <Card style={{ width: "25rem" }}>
-        <Card.Img variant="top" src={image} className="p-2" />
+    <div key={id} className="col-3 my-2">
+      <Card style={{ width: "20rem" }} className="bg-success bg-gradient ">
+        <Card.Title className="my-2">
+          {id} - {name}
+        </Card.Title>
+        <Card.Img
+          variant="top"
+          src={image}
+          style={{ height: "250px", width: "300px" }}
+          className="p-1 m-2 border"
+        />
         <Card.Body>
-          <Card.Title>
-            {id} - {name}
-          </Card.Title>
           <p>{category}</p>
           <p>Precio: USD {price}</p>
           <p> Stock disponible: {stock} </p>
@@ -29,7 +28,6 @@ const Item = ({ product }) => {
               Descripción
             </Button>
           </Link>
-          <ItemCount initial={initial} stock={stock} />
         </Card.Body>
       </Card>
     </div>

@@ -3,20 +3,27 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
-import FormControl from "react-bootstrap/FormControl";
-import InputGroup from "react-bootstrap/InputGroup";
 import ListGroup from "react-bootstrap/ListGroup";
-import CartWidget from "./CartWidget";
+import CartWidget from "../CarWidget/CartWidget";
 import { Link } from "react-router-dom";
+import Input from "../Input/Input";
 
 function NavBar() {
   return (
     <>
       <Navbar bg="light" expand="lg">
         <Container>
-          <div className="bg bg-warning mx-5 px-3">
+          <div>
             <Link to="/">
-              <Navbar.Brand>SECOND HAND BRAND</Navbar.Brand>
+              <Navbar.Brand>
+                <img
+                  src="https://res.cloudinary.com/dbt8209co/image/upload/v1639698978/Second%20Hand%20Brand/SHB-logo_l73qmj.png"
+                  width="50"
+                  height="50"
+                  className="d-inline-block align-top"
+                  alt="React Bootstrap logo"
+                />
+              </Navbar.Brand>
             </Link>
           </div>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -30,7 +37,6 @@ function NavBar() {
                 <ListGroup>
                   <Link
                     className="bg bg-danger"
-                    activeClassName="bg bg-primary"
                     to="/categoria/hogar-muebles-jardin"
                   >
                     <ListGroup.Item> Hogar, Muebles y Jardín</ListGroup.Item>
@@ -41,11 +47,11 @@ function NavBar() {
                   </Link>
 
                   <Link to="/categoria/tecnologia">
-                    <ListGroup.Item> Tecnología </ListGroup.Item>{" "}
+                    <ListGroup.Item> Tecnología </ListGroup.Item>
                   </Link>
 
                   <Link to="/categoria/deportes">
-                    <ListGroup.Item> Deportes </ListGroup.Item>{" "}
+                    <ListGroup.Item> Deportes </ListGroup.Item>
                   </Link>
                 </ListGroup>
               </NavDropdown>
@@ -54,19 +60,7 @@ function NavBar() {
             </Nav>
           </Navbar.Collapse>
 
-          <div className=" container-fluid">
-            <InputGroup>
-              <FormControl
-                placeholder="Buscar..."
-                aria-label="Recipient's username"
-                aria-describedby="basic-addon2"
-              />
-
-              <Button variant="outline-secondary" id="button-search">
-                Buscar
-              </Button>
-            </InputGroup>
-          </div>
+          <Input />
           <CartWidget />
           <div className="ms-4">
             <Button variant="outline-secondary" id="button-login">

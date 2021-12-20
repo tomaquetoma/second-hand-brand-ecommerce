@@ -2,7 +2,7 @@ import ButtonGroup from "react-bootstrap/ButtonGroup";
 import Button from "react-bootstrap/Button";
 import { useState } from "react";
 
-const ItemCount = ({ initial, stock }) => {
+const ItemCount = ({ initial, stock, onAdd }) => {
   const [contador, setContador] = useState(initial);
   // // const [contadorDate, setContadorDate] = useState(Date());
 
@@ -20,11 +20,6 @@ const ItemCount = ({ initial, stock }) => {
     // setContadorDate(Date());
   };
 
-  const onAdd = () => {
-    const message = `Agregaste ${contador} producto`;
-    contador === 1 ? alert(message) : alert(`${message}s`);
-  };
-
   return (
     <div>
       <ButtonGroup
@@ -39,10 +34,11 @@ const ItemCount = ({ initial, stock }) => {
           +
         </Button>
       </ButtonGroup>
+
       <Button
         variant="outline-secondary"
         className="container-fluid"
-        onClick={onAdd}
+        onClick={() => onAdd(contador)}
       >
         Añadir al Carrito
       </Button>
