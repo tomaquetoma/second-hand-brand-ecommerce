@@ -1,18 +1,22 @@
 import React from "react";
 import ItemCount from "../ItemCount/ItemCount";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
+import { CartContext } from "../Context/CartContext";
 
 const ItemDetail = ({ it }) => {
   const { id, image, name, price, description, stock } = it;
 
   const initial = 1;
 
-  const onAdd = (cantidad) => {
-    const message = `Agregaste ${cantidad} producto`;
-    cantidad === 1 ? alert(message) : alert(`${message}s`);
+  const { addToCart } = useContext(CartContext);
+
+  const onAdd = (cant) => {
+    // const message = `Agregaste ${cantidad} producto`;
+    // cantidad === 1 ? alert(message) : alert(`${message}s`);
     setGoCart(false);
+    addToCart({ ...it, quantity: cant });
   };
 
   const [goCart, setGoCart] = useState(true);
@@ -48,7 +52,7 @@ const ItemDetail = ({ it }) => {
               <ItemCount initial={initial} stock={stock} onAdd={onAdd} />
             ) : (
               <Link to="/cart/">
-                <Button variant="outline-secondary" className="container-fluid">
+                <Button variant="outline-success" className="container-fluid">
                   Ir al Carrito
                 </Button>
               </Link>
@@ -56,7 +60,7 @@ const ItemDetail = ({ it }) => {
 
             <Link to="/">
               <Button
-                variant="outline-secondary"
+                variant="outline-primary"
                 className="container-fluid mt-2"
               >
                 Seguir Comprando
