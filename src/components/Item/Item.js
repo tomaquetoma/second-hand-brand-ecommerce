@@ -5,15 +5,12 @@ import { Link } from "react-router-dom";
 import { Col } from "react-bootstrap";
 
 const Item = ({ product }) => {
-  const { id, image, name, category, price, stock } = product;
+  const { id, image, name, price, stock } = product;
 
   return (
     <Col sm={3}>
       <div key={id} className="my-3">
         <Card style={{ width: "20rem" }}>
-          <Card.Title className="my-2">
-            {id} - {name}
-          </Card.Title>
           <Card.Img
             variant="top"
             src={image}
@@ -21,7 +18,7 @@ const Item = ({ product }) => {
             className="p-1 m-2 border"
           />
           <Card.Body>
-            <p>{category}</p>
+            <Card.Title className="my-2">{name}</Card.Title>
             <p>Precio: USD {price}</p>
             <p> Stock disponible: {stock} </p>
 

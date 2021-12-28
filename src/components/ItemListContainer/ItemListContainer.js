@@ -3,8 +3,9 @@ import { getFetch } from "../../helpers/getFetch";
 import ItemList from "../ItemList/ItemList";
 import { useParams } from "react-router-dom";
 import { Container, Row } from "react-bootstrap";
+import Loading from "../Loading/Loading";
 
-const ItemListContainer = ({ greeting }) => {
+const ItemListContainer = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -38,11 +39,7 @@ const ItemListContainer = ({ greeting }) => {
 
   return (
     <Container>
-      <Row>
-        <h3>Hola, soy {greeting}</h3>
-
-        {loading ? <h1>Cargando...</h1> : <ItemList products={products} />}
-      </Row>
+      <Row>{loading ? <Loading /> : <ItemList products={products} />}</Row>
     </Container>
   );
 };

@@ -1,7 +1,7 @@
-import React from "react";
+import { memo } from "react";
 import Item from "../Item/Item";
 
-const ItemList = ({ products }) => {
+const ItemList = memo(({ products }) => {
   return (
     <>
       {products.map((product) => (
@@ -9,6 +9,6 @@ const ItemList = ({ products }) => {
       ))}
     </>
   );
-};
+});
 
 export default ItemList;

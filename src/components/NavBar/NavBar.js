@@ -35,11 +35,10 @@ function NavBar() {
             <Nav>
               <NavDropdown title="Categorias" id="basic-nav-dropdown">
                 <ListGroup>
-                  <Link
-                    className="bg bg-danger"
-                    to="/categoria/hogar-muebles-jardin"
-                  >
-                    <ListGroup.Item> Hogar, Muebles y Jardín</ListGroup.Item>
+                  <Link to="/categoria/hogar-muebles-jardin">
+                    <ListGroup.Item className="list-group-item">
+                      Hogar, Muebles y Jardín
+                    </ListGroup.Item>
                   </Link>
 
                   <Link to="/categoria/electrodomesticos">

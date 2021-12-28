@@ -2,9 +2,11 @@ import { useState, useEffect } from "react";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import { getFetch } from "../../helpers/getFetch";
 import { useParams } from "react-router-dom";
+import Loading from "../Loading/Loading";
 
-const ItemDetailContainer = ({ propiedad }) => {
+const ItemDetailContainer = () => {
   const [item, setItem] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const { idDetail } = useParams();
 
@@ -12,6 +14,7 @@ const ItemDetailContainer = ({ propiedad }) => {
     getFetch
       .then((result) => {
         setItem(result.filter((prod) => prod.id === parseInt(idDetail)));
+        setLoading(false);
       })
       .catch((error) => {
         alert("Se ha producido un error", error);
@@ -19,12 +22,7 @@ const ItemDetailContainer = ({ propiedad }) => {
   }, [idDetail]);
 
   return (
-    <>
-      <h3>Hola, soy {propiedad}</h3>
-      {item.map((it) => (
-        <ItemDetail it={it} />
-      ))}
-    </>
+    <>{loading ? <Loading /> : item.map((it) => <ItemDetail it={it} />)}</>
   );
 };
 

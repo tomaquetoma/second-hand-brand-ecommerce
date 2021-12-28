@@ -14,27 +14,17 @@ function App() {
           <NavBar />
 
           <Routes>
-            <Route
-              exact
-              path="/"
-              element={
-                <ItemListContainer greeting="ITEMLISTCONTAINER desde APP" />
-              }
-            />
+            <Route exact path="/" element={<ItemListContainer />} />
             <Route
               exact
               path="/categoria/:idCategory"
-              element={
-                <ItemListContainer greeting="ITEMLISTCONTAINER desde APP" />
-              }
+              element={<ItemListContainer />}
             />
 
             <Route
               exact
               path="/detalle/:idDetail"
-              element={
-                <ItemDetailContainer propiedad="ITEMDETAILCONTAINER desde APP" />
-              }
+              element={<ItemDetailContainer />}
             />
             <Route exact path="/cart/" element={<Cart />} />
           </Routes>
