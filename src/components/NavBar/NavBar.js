@@ -3,10 +3,10 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
-import ListGroup from "react-bootstrap/ListGroup";
 import CartWidget from "../CarWidget/CartWidget";
 import { Link } from "react-router-dom";
 import Input from "../Input/Input";
+import ListGroup from "react-bootstrap/ListGroup";
 
 function NavBar() {
   return (
@@ -34,28 +34,31 @@ function NavBar() {
           >
             <Nav>
               <NavDropdown title="Categorias" id="basic-nav-dropdown">
-                <ListGroup>
-                  <Link to="/categoria/hogar-muebles-jardin">
-                    <ListGroup.Item className="list-group-item">
-                      Hogar, Muebles y Jardín
-                    </ListGroup.Item>
-                  </Link>
+                <Link
+                  to="/categoria/hogar-muebles-jardin"
+                  className="text-decoration-none"
+                >
+                  <ListGroup.Item>Hogar, Muebles y Jardín</ListGroup.Item>
+                </Link>
 
-                  <Link to="/categoria/electrodomesticos">
-                    <ListGroup.Item> Electrodomésticos </ListGroup.Item>
-                  </Link>
+                <Link
+                  to="/categoria/electrodomesticos"
+                  className="text-decoration-none"
+                >
+                  <ListGroup.Item> Electrodomésticos </ListGroup.Item>
+                </Link>
 
-                  <Link to="/categoria/tecnologia">
-                    <ListGroup.Item> Tecnología </ListGroup.Item>
-                  </Link>
+                <Link
+                  to="/categoria/tecnologia"
+                  className="text-decoration-none"
+                >
+                  <ListGroup.Item> Tecnología </ListGroup.Item>
+                </Link>
 
-                  <Link to="/categoria/deportes">
-                    <ListGroup.Item> Deportes </ListGroup.Item>
-                  </Link>
-                </ListGroup>
+                <Link to="/categoria/deportes" className="text-decoration-none">
+                  <ListGroup.Item> Deportes </ListGroup.Item>
+                </Link>
               </NavDropdown>
-              {/* <Nav.Link href="#link">Compras</Nav.Link>
-              <Nav.Link href="#link">Ventas</Nav.Link> */}
             </Nav>
           </Navbar.Collapse>
 

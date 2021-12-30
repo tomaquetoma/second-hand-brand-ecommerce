@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { Col } from "react-bootstrap";
 
 const Item = ({ product }) => {
-  const { id, image, name, price, stock } = product;
+  const { id, image, name, price, stock, category } = product;
 
   return (
     <Col sm={3}>
@@ -18,9 +18,10 @@ const Item = ({ product }) => {
             className="p-1 m-2 border"
           />
           <Card.Body>
-            <Card.Title className="my-2">{name}</Card.Title>
-            <p>Precio: USD {price}</p>
-            <p> Stock disponible: {stock} </p>
+            <Card.Title className="my-2 fs-5">{name}</Card.Title>
+            <p className="my-1 fs-6">Precio: USD {price}</p>
+            <p className="my-1 fs-6"> Stock disponible: {stock} </p>
+            <p>{category}</p>
 
             <Link to={`/detalle/${id}`}>
               <Button variant="secondary" className="container-fluid my-2">

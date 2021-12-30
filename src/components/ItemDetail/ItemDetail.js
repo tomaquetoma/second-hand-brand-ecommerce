@@ -5,8 +5,8 @@ import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 import { CartContext } from "../Context/CartContext";
 
-const ItemDetail = ({ it }) => {
-  const { id, image, name, price, description, stock } = it;
+const ItemDetail = ({ item }) => {
+  const { id, image, name, price, description, stock } = item;
 
   const initial = 1;
 
@@ -16,7 +16,7 @@ const ItemDetail = ({ it }) => {
     // const message = `Agregaste ${cantidad} producto`;
     // cantidad === 1 ? alert(message) : alert(`${message}s`);
     setGoCart(false);
-    addToCart({ ...it, quantity: cant });
+    addToCart({ ...item, quantity: cant });
   };
 
   const [goCart, setGoCart] = useState(true);
