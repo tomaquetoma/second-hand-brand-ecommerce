@@ -8,7 +8,6 @@ const CartDetail = () => {
 
   const handlerRemoveItem = (item) => {
     removeItem(item);
-    console.log(item);
   };
 
   return (
@@ -23,7 +22,7 @@ const CartDetail = () => {
               <div>
                 <img
                   src={itCart.image}
-                  style={{ height: "100px", width: "150px" }}
+                  // style={{ height: "100px", width: "150px" }}
                   alt="imagen producto cart"
                   className=""
                 />
@@ -34,7 +33,6 @@ const CartDetail = () => {
                 <p> {itCart.name} </p>
                 <p>Cantidad: {itCart.quantity}</p>
                 <p> Precio Unitario: USD {itCart.price}</p>
-                <p>ID: {itCart.id}</p>
               </div>
             </Col>
             <Col xs={3}>

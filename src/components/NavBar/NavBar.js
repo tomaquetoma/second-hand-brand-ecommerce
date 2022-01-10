@@ -5,7 +5,7 @@ import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
 import CartWidget from "../CarWidget/CartWidget";
 import { Link } from "react-router-dom";
-import Input from "../Input/Input";
+// import Input from "../Input/Input";
 import ListGroup from "react-bootstrap/ListGroup";
 
 function NavBar() {
@@ -62,7 +62,7 @@ function NavBar() {
             </Nav>
           </Navbar.Collapse>
 
-          <Input />
+          {/* <Input /> */}
           <CartWidget />
           <div className="ms-4">
             <Button variant="outline-secondary" id="button-login">

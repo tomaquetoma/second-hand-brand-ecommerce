@@ -4,9 +4,10 @@ import { useState, useContext } from "react";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 import { CartContext } from "../Context/CartContext";
+import CarouselImages from "../CarouselImages/CarouselImages";
 
 const ItemDetail = ({ item }) => {
-  const { id, image, name, price, description, stock } = item;
+  const { id, image2, name, price, description, stock } = item;
 
   const initial = 1;
 
@@ -22,31 +23,20 @@ const ItemDetail = ({ item }) => {
   const [goCart, setGoCart] = useState(true);
 
   return (
-    <div key={id} className="border border-dark border-2 rounded container-sm">
-      <h4>
-        {id} - {name}
-      </h4>
+    <div key={id} className="mt-5 ">
       <div className="container p-3">
         <div className="row">
-          <div className="col">
-            <img
-              src={image}
-              alt="imagen"
-              style={{ height: "300px", width: "400px" }}
-              className="border border-dark border-2 rounded"
-            />
-          </div>
-          <div className="col ">
-            <div className="border border-dark border-2 rounded p-1 bg bg-light my-3">
-              <h4>{name}</h4>
-              <p>
-                Precio: USD {price} - Stock: {stock}
-              </p>
-            </div>
+          <div className="col-8">
+            <CarouselImages image={image2} />
 
-            <p className="border border-dark border-2 rounded p-2 bg bg-light">
-              {description}
-            </p>
+            <p className=" p-2 bg bg-light">{description}</p>
+          </div>
+          <div className="border col-4">
+            <div className="p-1 my-2">
+              <h4 className="text-uppercase">{name}</h4>
+              <p>Precio: USD {price}</p>
+              <p>Stock: {stock}</p>
+            </div>
 
             {goCart ? (
               <ItemCount initial={initial} stock={stock} onAdd={onAdd} />

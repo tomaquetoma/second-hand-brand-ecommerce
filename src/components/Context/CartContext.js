@@ -45,8 +45,6 @@ const CartContextProvider = ({ children }) => {
     setCartList([]);
   }
 
-  console.log(cartList);
-
   return (
     <CartContext.Provider
       value={{

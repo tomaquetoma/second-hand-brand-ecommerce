@@ -3,7 +3,7 @@ import { CartContext } from "../Context/CartContext";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
-import CartCheckout from "../CartCheckout/CartCheckout";
+import CartControls from "../CartControls/CartControls";
 import CartDetail from "../CartDetail/CartDetail";
 
 const Cart = () => {
@@ -35,7 +35,7 @@ const Cart = () => {
               <CartDetail />
             </Col>
             <Col sm={3}>
-              <CartCheckout />
+              <CartControls />
             </Col>
           </Row>
         )}
