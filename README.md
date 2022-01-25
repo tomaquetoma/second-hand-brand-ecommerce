@@ -1,3 +1,28 @@
+PROYECTO FINAL
+React Js - Coderhouse
+
+DEMO
+
+<!-- Link al demo -->
+
+PARA CLONAR ESTE REPOSITORIO
+
+CONSTRUIDO CON:
+Lenguajes: HTML, CSS, JavaScript
+Libreria: React.js
+Frameworks: (indicar versiones y especificar para que lo use)
+-Bootstrap
+-React-Bootstrap
+-Bootstrap Icons
+-Firebase
+-React-Router-Dom
+
+INSTALACION REACT JS
+-Como realizamos la instalacion
+
+ACPLICACION EN MODO DESARROLLO
+-npm start
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
