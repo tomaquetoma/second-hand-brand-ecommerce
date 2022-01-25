@@ -20,7 +20,7 @@ https://shb.netlify.app/
   - React-Bootstrap (2.0.2) - Utilización de componentes
   - Bootstrap Icons (1.7.1) - Iconos de la aplicación
   - Firebase (9.6.1) -Solución de base de datos y remplazo de back end
-  - React-Router-Dom (6.1.1) - Enrutado de nuestra aplicación
+  - React-Router-Dom (6.1.1) - Enrutado de la aplicación
 
 ### INSTALACION REACT JS
 
